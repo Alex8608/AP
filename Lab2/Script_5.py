@@ -10,7 +10,7 @@ def next() -> str:
     while not dataset.empty:
         data=dataset.iloc[0]
         dataset=dataset.iloc[1:]
-        return f'{data[0].date()},{data[1]}'
+        return (data[0].isoformat()[:10],data[1])
     return None
 
 if __name__=="__main__":
