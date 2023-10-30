@@ -21,6 +21,7 @@ def find_in_X_Y(date:dt.datetime) -> str:
         return None
     
 def find_in_years(date:dt.datetime) -> str:
+    """Return course of dollar from years"""
     for name in listdir("./Lab2/Years"):
         if name[:4]==date.isoformat()[:4]:
             file=pd.read_csv(f'./Lab2/Years/{name}', names=["Date","Course"])
@@ -31,6 +32,7 @@ def find_in_years(date:dt.datetime) -> str:
     return None
 
 def find_in_weeks(date:dt.datetime) -> str:
+    """Return course of dollar from weeks"""
     for name in listdir("./Lab2/Weeks"):
         if dt.datetime(int(name[:4]),int(name[4:6]),int(name[6:8]))<=date<=dt.datetime(int(name[9:13]),int(name[13:15]),int(name[15:17])):
             file=pd.read_csv(f'./Lab2/Weeks/{name}', names=["Date","Course"])
